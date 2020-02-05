@@ -15,7 +15,11 @@ const decrementCount = ({decrementBy = 1} = {}) => {
     }
 }
 
-const store = createStore((state = { count: 0}, action) => {
+//reducers
+//1. Are pure function
+//2. Never change the state or action
+
+const countReducer = (state = { count: 0}, action) => {
     switch(action.type) {
         case 'INCREMENT':
             const incrementBy = typeof(action.incrementBy) === 'number' ? action.incrementBy : 1;
@@ -34,9 +38,9 @@ const store = createStore((state = { count: 0}, action) => {
         default:
             return state
     }
-});
+}
 
-
+const store = createStore(countReducer);
 
 const unsubscribe = store.subscribe(() => {
     console.log(store.getState());

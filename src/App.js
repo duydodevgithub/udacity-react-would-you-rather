@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import './js/redux-expensify';
+// import './js/redux-expensify';
 
 function App() {
   return (
